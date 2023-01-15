@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 // Code being passed from FE
 app.get("/getAccessToken", async (req, res) => {
   console.log(req.query.code);
-  console.log(CLIENT_ID);
+  // console.log(CLIENT_ID);
 
   const params =
     "?client_id=" +
