@@ -5,11 +5,10 @@ import bodyParser from "body-parser";
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 
-const CLIENT_ID = "5e5827589bb8bfaf633b";
-const CLIENT_SECRET = "deb852824f59d9e8aef587d44de868353f7bd345";
-
 const app = express();
 const PORT = process.env.PORT || 4000;
+const CLIENT_ID = `5e5827589bb8bfaf633b`;
+const CLIENT_SECRET = `deb852824f59d9e8aef587d44de868353f7bd345`;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -17,6 +16,7 @@ app.use(bodyParser.json());
 // Code being passed from FE
 app.get("/getAccessToken", async (req, res) => {
   console.log(req.query.code);
+  console.log(CLIENT_ID);
 
   const params =
     "?client_id=" +
